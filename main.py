@@ -23,15 +23,23 @@ def main():
     print("Welcome to the Math App!!!")
     print("")  # line break
     ### write code to complete this function BELOW here ###
+    # 1st die
     die_1 = roll_die()
+    # 2nd die
     die_2 = roll_die()
+    # decide the question type
     question_type = get_question_type()
+    # print out the question
     print_question(die_1, die_2, question_type)
+    # ask for the answer from user 
     answer = input_answer()
+    # if user input is invalid
     if answer == -1:
         print_error_message()
+    #correct answer and print
     if is_correct_answer(die_1 ,die_2, question_type, answer) is True:
         print_congratulations(question_type)
+    # wrong answer and print
     elif is_correct_answer(die_1 ,die_2, question_type, answer) is False:
         print_correct_answer(die_1, die_2, question_type)
     
